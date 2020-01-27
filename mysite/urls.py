@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls')) #첫 주소는 shop으로 시작하고 그 이후 나머지 주소는 'shop.urls'에서 이어간다.
+    path('shop/', include('shop.urls')), #첫 주소는 shop으로 시작하고 그 이후 나머지 주소는 'shop.urls'에서 이어간다.
+    path('blog/', include('blog.urls')),
 ]
