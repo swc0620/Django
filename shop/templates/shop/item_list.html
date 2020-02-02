@@ -1,22 +1,22 @@
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Blog for Ask Company</title>
-    </head>
-    <body>
-        <h1>Ask Company</h1>
+{% extends "shop/layout.html" %}
+    {% block content %}
         <form action="" method=""GET>
             <input type="text" name="q" value="{{ q }}" />
             <input type="submit" value="search" />
         </form>
+
+        {{ block.super }}<!--부모 탬플릿의 내용을 표시-->
+
         <ul>
             {% for item in item_list %}
                 <li>
-                    {{ item.name }}
+                    <a href="/shop/{{ item.pk }}/">
+                        {{ item.name }}
+                    </a>
+
                     {{ item.price }}
                     {{ item.desc }}
                 </li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+    {% endblock %}
